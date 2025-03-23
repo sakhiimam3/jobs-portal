@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   HStack,
-  IconButton,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -13,17 +12,20 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Link,
   Avatar,
   Image,
+  
 } from "@chakra-ui/react";
 import CustomButton from "../components/CustomButton";
 import Container from "./wrapper";
 import { navItems } from "../mockdata";
 import logo from "../assets/images/logo.png";
-import { SearchIcon } from "../icons";
+import { MenuIcon, SearchIcon } from "../icons";
 import ProfileImage from "../assets/images/profile.png";
 import { NavLink } from "react-router-dom";
+
+
+
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -33,11 +35,11 @@ const Navbar = () => {
         <NavLink
           key={item.label}
           to={item.href}
+          onClick={onClose}
           style={({ isActive }) => ({
             color: isActive ? "#0154AA" : "#737A91",
             fontWeight: isActive ? "700" : "lighter",
             fontSize: "md",
-           
           })}
           _hover={{ color: "#0154AA", fontWeight: "700" }}
         >
@@ -62,7 +64,7 @@ const Navbar = () => {
           </HStack>
 
           {/* Right Section */}
-          <HStack ml="auto">
+          <HStack ml="auto" gap={3}>
             {/* Search Bar */}
             <InputGroup maxW="500px" display={{ base: "none", md: "block" }}>
               <InputLeftElement>
@@ -90,20 +92,44 @@ const Navbar = () => {
             >
               Resume Builder
             </CustomButton>
-            <Avatar size={{base:"sm",md:"md"}} src={ProfileImage} />
+            <Avatar size={{ base: "sm" }} src={ProfileImage} />
           </HStack>
 
           {/* Mobile Menu Button */}
-<Box as="span" display={{base:"flex",lg:"none"}} onClick={onOpen}>Menu</Box>
+          <Box
+            as="span"
+            display={{ base: "flex", lg: "none" }}
+            onClick={onOpen}
+          >
+            <MenuIcon />
+          </Box>
         </Flex>
       </Container>
 
       {/* Mobile Drawer */}
-      <Drawer isOpen={isOpen} placement="right"  onClose={onClose}>
-        <DrawerOverlay />
-        <DrawerContent>
+      <Drawer 
+        isOpen={isOpen} 
+        placement="right" 
+        onClose={onClose}
+        motionPreset="slideInRight"
+        transitionDuration={{
+          enter: "0.3s",
+          exit: "0.2s"
+        }}
+      >
+        <DrawerOverlay 
+          bg="blackAlpha.300"
+          backdropFilter="blur(10px)"
+          transition="all 0.3s ease-in-out"
+        />
+        <DrawerContent
+          sx={{
+            transition: "transform 0.2s ease-in-out !important",
+            transform: isOpen ? "translateX(0)" : "translateX(100%)"
+          }}
+        >
           <DrawerCloseButton />
-          <DrawerBody pt={10} >
+          <DrawerBody pt={10}>
             <VStack spacing={4} align="start">
               <InputGroup mb={4}>
                 <InputLeftElement>
@@ -111,17 +137,17 @@ const Navbar = () => {
                   <SearchIcon />
                 </InputLeftElement>
                 <Input
-                placeholder="Search"
-                bg="#F6F9FF"
-                border="1px solid"
-                borderColor="#F6F9FF"
-                height="45px"
-                borderRadius="8px"
-                _placeholder={{ color: "gray.400" }}
-              />
+                  placeholder="Search"
+                  bg="#F6F9FF"
+                  border="1px solid"
+                  borderColor="#F6F9FF"
+                  height="45px"
+                  borderRadius="8px"
+                  _placeholder={{ color: "gray.400" }}
+                />
               </InputGroup>
               <NavItems />
-              <CustomButton>Resume Builder</CustomButton>
+              <CustomButton bg="bgbtn" color="white">Resume Builder</CustomButton>
             </VStack>
           </DrawerBody>
         </DrawerContent>

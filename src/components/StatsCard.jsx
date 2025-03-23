@@ -2,7 +2,7 @@ import { Card, CardBody, VStack, HStack, Text, Divider } from "@chakra-ui/react"
 
 const StatsCard = () => {
   return (
-    <Card w="90%" my={4} borderRadius="10px" boxShadow="md">
+    <Card sx={{base: "100%", md: "90%" }} my={4} borderRadius="10px" boxShadow="sm">
       <CardBody>
         <VStack align="stretch" spacing={3}>
           <HStack justify="space-between">

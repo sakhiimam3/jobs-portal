@@ -1,5 +1,5 @@
 export const navItems = [
-    { label: "Find Jobs", href: "/find-jobs" },
+    { label: "Find Jobs", href: "/" },
     { label: "Top Companies", href: "/top-companies" },
     { label: "Job Tracker", href: "/job-tracker" },
     { label: "My Calendar", href: "/calendar" },
