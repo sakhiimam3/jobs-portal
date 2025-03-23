@@ -14,7 +14,6 @@ import {
   InputLeftElement,
   Avatar,
   Image,
-  
 } from "@chakra-ui/react";
 import CustomButton from "../components/CustomButton";
 import Container from "./wrapper";
@@ -23,8 +22,6 @@ import logo from "../assets/images/logo.png";
 import { MenuIcon, SearchIcon } from "../icons";
 import ProfileImage from "../assets/images/profile.png";
 import { NavLink } from "react-router-dom";
-
-
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -107,17 +104,17 @@ const Navbar = () => {
       </Container>
 
       {/* Mobile Drawer */}
-      <Drawer 
-        isOpen={isOpen} 
-        placement="right" 
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
         onClose={onClose}
         motionPreset="slideInRight"
         transitionDuration={{
           enter: "0.3s",
-          exit: "0.2s"
+          exit: "0.2s",
         }}
       >
-        <DrawerOverlay 
+        <DrawerOverlay
           bg="blackAlpha.300"
           backdropFilter="blur(10px)"
           transition="all 0.3s ease-in-out"
@@ -125,13 +122,13 @@ const Navbar = () => {
         <DrawerContent
           sx={{
             transition: "transform 0.2s ease-in-out !important",
-            transform: isOpen ? "translateX(0)" : "translateX(100%)"
+            transform: isOpen ? "translateX(0)" : "translateX(100%)",
           }}
         >
           <DrawerCloseButton />
           <DrawerBody pt={10}>
             <VStack spacing={4} align="start">
-              <InputGroup mb={4}>
+              <InputGroup mb={4} mt="5">
                 <InputLeftElement>
                   {/* <SearchIcon color="gray.400" /> */}
                   <SearchIcon />
@@ -147,7 +144,9 @@ const Navbar = () => {
                 />
               </InputGroup>
               <NavItems />
-              <CustomButton bg="bgbtn"  color="white" borderRadius={"8px"}>Resume Builder</CustomButton>
+              <CustomButton bg="bgbtn" color="white" borderRadius={"8px"}>
+                Resume Builder
+              </CustomButton>
             </VStack>
           </DrawerBody>
         </DrawerContent>
