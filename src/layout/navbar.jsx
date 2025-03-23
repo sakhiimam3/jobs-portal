@@ -147,7 +147,7 @@ const Navbar = () => {
                 />
               </InputGroup>
               <NavItems />
-              <CustomButton bg="bgbtn" color="white">Resume Builder</CustomButton>
+              <CustomButton bg="bgbtn"  color="white" borderRadius={"8px"}>Resume Builder</CustomButton>
             </VStack>
           </DrawerBody>
         </DrawerContent>

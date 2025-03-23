@@ -2,13 +2,13 @@ import {
   Box,
   Input,
   Select,
-  Button,
   HStack,
   Text,
   Tag,
   TagLabel,
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
+import { SearchIcon } from "../icons";
+import CustomButton from "./CustomButton";
 
 const JobSearchBar = () => {
   return (
@@ -77,17 +77,17 @@ const JobSearchBar = () => {
             <option value="part-time">Part-Time</option>
             <option value="contract">Contract</option>
           </Select>
-          <Button
-            bg="#0A66C2"
-            color="white"
-            borderRadius="md"
-            px={6}
-            py={5}
+          <CustomButton
+            variant="primary"
             width={{ base: "100%", md: "auto" }}
-            _hover={{ bg: "#084C91" }}
+            leftIcon={<SearchIcon />}
+            bg="bgbtn"
+            px={8}
+            py={2}
+            borderRadius={"8px"}
           >
-            <SearchIcon mr={2} /> Search
-          </Button>
+            Search
+          </CustomButton>
         </HStack>
       </Box>
       <HStack 

@@ -55,6 +55,7 @@ export const theme = extendTheme({
     link: '#737A91',
     bgbtn: '#0154AA',
     headingColor: '#333333',
+    textColor: '#585D6E',
   },
   fontWeights: {
     thin: 100,

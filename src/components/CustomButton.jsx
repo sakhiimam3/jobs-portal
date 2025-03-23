@@ -6,6 +6,7 @@ const CustomButton = ({ children, variant = "primary", ...props }) => {
   return (
     <Button
       h="50px"
+      fontWeight={"500"}
       borderRadius="14px"
       bg={isPrimary ? "blue.500" : "transparent"}
       color={isPrimary ? "white" : "gray.700"}

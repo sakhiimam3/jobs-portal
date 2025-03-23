@@ -91,8 +91,8 @@ export const SaveIcon = createIcon({
   displayName: "SaveIcon",
   viewBox: "0 0 14 18",
   defaultProps: {
-    width: "14px",
-    height: "18px",
+    width: "25px",
+    height: "25px",
   },
   path: (
     <path 

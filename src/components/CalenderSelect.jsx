@@ -37,7 +37,7 @@ const CalendarSelect = () => {
           <CardBody p={0}>
             <HStack justify="space-between">
               <VStack align="start" spacing={0}>
-                <Text fontSize="md" fontWeight="bold" color="headingColor">
+                <Text fontSize="md" fontWeight="600" color="headingColor">
                   My calendar
                 </Text>
                 <Text fontSize="sm" fontWeight="normal" color="link">

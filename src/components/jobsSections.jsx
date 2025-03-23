@@ -48,7 +48,6 @@ const FeaturedJobs = ({ title, link }) => {
       <HStack mb={4}>
         <Text 
           fontSize={{ base: "md", sm: "lg", md: "xl" }} 
-          fontWeight="bold"
         >
           {title}
         </Text>

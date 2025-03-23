@@ -39,7 +39,7 @@ const ProfileCard = () => {
         {/* User Info */}
         <CardBody textAlign="center" mt="6">
           <VStack spacing={1}>
-            <Text fontWeight="bold" color="headingColor" fontSize="lg">
+            <Text fontWeight="600" color="headingColor" fontSize="lg">
               Albert Flores
             </Text>
             <Text
@@ -51,7 +51,7 @@ const ProfileCard = () => {
               Senior Product Designer | UI/UX Designer | Graphic Designer |
               Web...
             </Text>
-            <Text fontSize="xs" color="gray.500">
+            <Text fontSize="sm" color="textColor">
               Clinton, Maryland
             </Text>
           </VStack>
